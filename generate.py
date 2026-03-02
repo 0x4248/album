@@ -321,8 +321,8 @@ FULLSCREEN_TEMPLATE = """<!DOCTYPE html>
 
     <main class="frame">
         <div class="topline">
-            <div><span class="logo" style="font-size:22px;">0x4248</span> Album — Fullscreen Photobook</div>
-            <div><a href="/album/">Back to album index</a></div>
+            <div><span class="logo" style="font-size:22px;">0x4248 MEDIA</span></div>
+            <div><a href="/album/">Back to album</a></div>
         </div>
 
         <section class="viewer">
@@ -339,7 +339,6 @@ FULLSCREEN_TEMPLATE = """<!DOCTYPE html>
                 <button id="prevBtn" type="button">← Prev</button>
                 <button id="nextBtn" type="button">Next →</button>
                 <button id="muteBtn" type="button">▶ Start music</button>
-                <a id="musicLink" href="https://www.youtube.com/watch?v={{ youtube_video_id }}" target="_blank" rel="noopener noreferrer">Open track</a>
             </div>
         </section>
     </main>
