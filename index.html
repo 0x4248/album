@@ -1,0 +1,1888 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>0x4248</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body class="basic">
+
+    <pre class="topbar">
+<span class="logo">0x4248</span> [<a href="/">home</a>] [<a href="https://n.0x4248.dev">Notebook</a>] [<a href="https://m.0x4248.dev">Man pages</a>] [<a href="/nexus">Nexus</a>] [<a href="https://github.com/0x4248">GitHub</a>]
+</pre>
+
+    <div class="container">
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <pre class="nav">
+<h1><img src="/icons/computer_search-0.png" class="icon" style="width: 30px; height: 30px;">/ - ROOT</h1>
+* <a href="/">landing</a>
+    * <a href="/AboutMe">about</a>
+    * <a href="https://n.0x4248.dev">Notebook</a>
+    * <a href="https://m.0x4248.dev">Man pages</a>
+    * <a href="/nexus">nexus</a>
+    * <a href="https://github.com/0x4248">git</a>
+    <hr>
+<h2>External</h2>
+
+* <a href="https://github.com/0x4248">GitHub</a>
+* <a href="https://gist.github.com/0x4248">Gist</a>
+* <a href="https://www.openstreetmap.org/user/0x4248">OpenStreetMap</a>
+
+<h2>Accessibility</h2>
+<b>JS Required</b>
+* <a onclick="document.getElementById('main').style.fontFamily='Georgia,serif'">Set to serif font</a>
+* <a onclick="document.getElementById('main').style.filter='contrast(200%)'">High contrast</a>
+* <a onclick="document.getElementById('main').style.filter='invert(100%)'">Invert colours</a>
+* <a onclick="document.getElementById('main').style.fontSize='18px'">Increase font size</a>
+* <a onclick="document.getElementById('main').style.fontSize='14px'">Reset font size</a>
+            </pre>
+            </pre>
+            <pre>
+      |\      _,,,---,,_
+ZZZzz /,`.-'`'    -.  ;-;;,_
+     |,4-  ) )-,_. ,\ (  `'-'
+    '---''(_/--'  `-'\_)
+Sleepy little fella
+            </pre>
+
+
+        </div>
+
+        <!-- CONTENT -->
+        <div class="content" id="main">
+            
+<style>
+.album-wrap {
+    border: 1px dashed var(--border-color);
+    padding: 12px;
+}
+
+.album-wrap .album-title {
+    margin-bottom: 8px;
+}
+
+.album-wrap .album-intro {
+    margin-bottom: 8px;
+}
+
+.album-wrap .album-copy i {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.album-wrap .camera-shelf {
+    border: 1px solid var(--border-color);
+    background-color: color-mix(in srgb, var(--primary-bg) 70%, var(--content-bg));
+    padding: 8px;
+    margin: 12px 0;
+}
+
+.album-wrap .camera-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.album-wrap .camera-strip img {
+    width: 180px;
+    height: auto;
+    border: 1px solid var(--border-color);
+}
+
+.album-wrap .album-jump {
+    border-top: 1px solid var(--hr-color);
+    border-bottom: 1px solid var(--hr-color);
+    padding: 8px 0;
+    margin: 12px 0;
+}
+
+.album-wrap .album-month {
+    margin-top: 16px;
+}
+
+.album-wrap .album-month h2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.album-wrap .album-day {
+    margin-bottom: 16px;
+    border-top: 1px solid var(--hr-color);
+    padding-top: 8px;
+}
+
+.album-wrap .album-day h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.album-wrap .album-count {
+    font-size: 12px;
+    color: var(--italic-color);
+}
+
+.album-wrap .album-day-note {
+    margin-bottom: 8px;
+}
+
+.album-wrap .album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+}
+
+.album-wrap figure {
+    float: none;
+    width: auto;
+    margin: 0;
+    height: auto;
+    overflow: visible;
+    border: 1px solid var(--border-color);
+    padding: 6px;
+    background-color: color-mix(in srgb, var(--primary-bg) 65%, var(--content-bg));
+}
+
+.album-wrap figure img {
+    width: 100%;
+    max-height: 260px;
+    object-fit: contain;
+    margin-bottom: 4px;
+}
+
+.album-wrap figcaption {
+    color: var(--italic-color);
+    height: auto;
+    overflow: visible;
+    line-height: 1.2em;
+    font-size: 12px;
+    text-align: left;
+}
+
+.album-wrap .album-empty-caption {
+    opacity: 0.6;
+}
+</style>
+
+<div class="album-wrap">
+<p class="logo">My Album</p>
+<p class="album-intro">Photos from my life, organised by date with some captions. No AI and real cameras used from the 90s to the present day.</p>
+<p class="album-intro">Contains images from 4248 Media and the 4248 Arial Space Photography Laboratory (4248 ASPL).</p>
+<div class="album-copy">
+<i>© 2026 4248 Media, A part of 0x4248. Licensed under the Creative Commons Attribution-ShareAlike 4.0 License (CC BY-SA 4.0).</i>
+<i>© 2026 4248 ASPL (4248 Arial Space Photography Laboratory), A part of 0x4248. Licensed under the Creative Commons Attribution-ShareAlike 4.0 License (CC BY-SA 4.0).</i>
+<i>© 2026 0x4248.</i>
+</div>
+
+<div class="camera-shelf">
+<h2>My camera collection:</h2>
+<div class="camera-strip">
+<img src="/album/cam_imgs/SONY_Mavica.jpg" loading="lazy" width="200" alt="Sony Mavica camera">
+<img src="/album/cam_imgs/Canon_4000D.jpg" loading="lazy" width="200" alt="Canon 4000D camera">
+<img src="/album/cam_imgs/Canon_5D.jpg" loading="lazy" width="200" alt="Canon 5D camera">
+</div>
+</div>
+
+<p><a href="/album/fullscreen.html">Open fullscreen photobook mode</a></p>
+
+<div class="album-jump"><b>Jump to month:</b>
+ [ <a href="#m-2026-02">February 2026</a> | <a href="#m-2025-04">April 2025</a> | <a href="#m-2025-03">March 2025</a> | <a href="#m-2024-11">November 2024</a> | <a href="#m-2024-10">October 2024</a> | <a href="#m-2024-09">September 2024</a> | <a href="#m-2024-08">August 2024</a> | <a href="#m-2024-07">July 2024</a> | <a href="#m-2018-07">July 2018</a> | <a href="#m-2018-02">February 2018</a> | <a href="#m-2017-09">September 2017</a> | <a href="#m-2017-08">August 2017</a> ]
+</div>
+<section class="album-month" id="m-2026-02">
+<h2>February 2026<span class="album-count">53 photos</span></h2>
+<article class="album-day">
+<h3>Saturday 28 February 2026<span class="album-count">6 photos</span></h3>
+<p class="album-day-note">Today i went to some cool fur-meet in my local city. My friend introduced me to the group and it was a awesome day</p>
+<div class="album-grid">
+
+<figure>
+  <a href="/album/imgs/2026/02/28/IMG_2731.png">
+        <img src="/album/imgs_thumb/2026/02/28/IMG_2731.jpg" loading="lazy" alt="IMG_2731.png">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/28/IMG_2732.png">
+        <img src="/album/imgs_thumb/2026/02/28/IMG_2732.jpg" loading="lazy" alt="IMG_2732.png">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/28/MVC-005S.png">
+        <img src="/album/imgs_thumb/2026/02/28/MVC-005S.jpg" loading="lazy" alt="MVC-005S.png">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/28/MVC-011S.png">
+        <img src="/album/imgs_thumb/2026/02/28/MVC-011S.jpg" loading="lazy" alt="MVC-011S.png">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/28/MVC-014S.png">
+        <img src="/album/imgs_thumb/2026/02/28/MVC-014S.jpg" loading="lazy" alt="MVC-014S.png">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/28/MVC-015S.png">
+        <img src="/album/imgs_thumb/2026/02/28/MVC-015S.jpg" loading="lazy" alt="MVC-015S.png">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+</div>
+</article>
+<article class="album-day">
+<h3>Tuesday 24 February 2026<span class="album-count">10 photos</span></h3>
+<div class="album-grid">
+
+<figure>
+  <a href="/album/imgs/2026/02/24/MVC-001S.JPG">
+        <img src="/album/imgs_thumb/2026/02/24/MVC-001S.jpg" loading="lazy" alt="MVC-001S.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/24/MVC-003S.JPG">
+        <img src="/album/imgs_thumb/2026/02/24/MVC-003S.jpg" loading="lazy" alt="MVC-003S.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/24/MVC-006S.JPG">
+        <img src="/album/imgs_thumb/2026/02/24/MVC-006S.jpg" loading="lazy" alt="MVC-006S.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/24/MVC-007S.JPG">
+        <img src="/album/imgs_thumb/2026/02/24/MVC-007S.jpg" loading="lazy" alt="MVC-007S.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/24/MVC-008S.JPG">
+        <img src="/album/imgs_thumb/2026/02/24/MVC-008S.jpg" loading="lazy" alt="MVC-008S.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/24/MVC-010S.JPG">
+        <img src="/album/imgs_thumb/2026/02/24/MVC-010S.jpg" loading="lazy" alt="MVC-010S.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/24/MVC-011S.JPG">
+        <img src="/album/imgs_thumb/2026/02/24/MVC-011S.jpg" loading="lazy" alt="MVC-011S.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/24/MVC-013S.JPG">
+        <img src="/album/imgs_thumb/2026/02/24/MVC-013S.jpg" loading="lazy" alt="MVC-013S.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/24/MVC-014S.JPG">
+        <img src="/album/imgs_thumb/2026/02/24/MVC-014S.jpg" loading="lazy" alt="MVC-014S.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/24/MVC-015S.JPG">
+        <img src="/album/imgs_thumb/2026/02/24/MVC-015S.jpg" loading="lazy" alt="MVC-015S.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+</div>
+</article>
+<article class="album-day">
+<h3>Friday 20 February 2026<span class="album-count">8 photos</span></h3>
+<div class="album-grid">
+
+<figure>
+  <a href="/album/imgs/2026/02/20/MVC-002S.jpg">
+        <img src="/album/imgs_thumb/2026/02/20/MVC-002S.jpg" loading="lazy" alt="MVC-002S.jpg">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/20/MVC-003S.jpg">
+        <img src="/album/imgs_thumb/2026/02/20/MVC-003S.jpg" loading="lazy" alt="MVC-003S.jpg">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/20/MVC-004S.JPG">
+        <img src="/album/imgs_thumb/2026/02/20/MVC-004S.jpg" loading="lazy" alt="MVC-004S.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/20/MVC-006S.JPG">
+        <img src="/album/imgs_thumb/2026/02/20/MVC-006S.jpg" loading="lazy" alt="MVC-006S.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/20/MVC-010S.JPG">
+        <img src="/album/imgs_thumb/2026/02/20/MVC-010S.jpg" loading="lazy" alt="MVC-010S.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/20/MVC-015S.JPG">
+        <img src="/album/imgs_thumb/2026/02/20/MVC-015S.jpg" loading="lazy" alt="MVC-015S.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/20/MVC-016S.JPG">
+        <img src="/album/imgs_thumb/2026/02/20/MVC-016S.jpg" loading="lazy" alt="MVC-016S.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/20/MVC-018S.JPG">
+        <img src="/album/imgs_thumb/2026/02/20/MVC-018S.jpg" loading="lazy" alt="MVC-018S.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+</div>
+</article>
+<article class="album-day">
+<h3>Friday 13 February 2026<span class="album-count">15 photos</span></h3>
+<p class="album-day-note">Today was a fairly wet one, didnt like how gloomy it was</p>
+<div class="album-grid">
+
+<figure>
+  <a href="/album/imgs/2026/02/13/MVC-001S.JPG">
+        <img src="/album/imgs_thumb/2026/02/13/MVC-001S.jpg" loading="lazy" alt="MVC-001S.JPG">
+  </a>
+  <figcaption>First ever image I took on the Sony Mavica.</figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/13/MVC-004S.JPG">
+        <img src="/album/imgs_thumb/2026/02/13/MVC-004S.jpg" loading="lazy" alt="MVC-004S.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/13/MVC-010S.JPG">
+        <img src="/album/imgs_thumb/2026/02/13/MVC-010S.jpg" loading="lazy" alt="MVC-010S.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/13/MVC-011S.JPG">
+        <img src="/album/imgs_thumb/2026/02/13/MVC-011S.jpg" loading="lazy" alt="MVC-011S.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/13/MVC-016S.JPG">
+        <img src="/album/imgs_thumb/2026/02/13/MVC-016S.jpg" loading="lazy" alt="MVC-016S.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/13/MVC-017S.JPG">
+        <img src="/album/imgs_thumb/2026/02/13/MVC-017S.jpg" loading="lazy" alt="MVC-017S.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/13/MVC-018S.JPG">
+        <img src="/album/imgs_thumb/2026/02/13/MVC-018S.jpg" loading="lazy" alt="MVC-018S.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/13/MVC-019S.JPG">
+        <img src="/album/imgs_thumb/2026/02/13/MVC-019S.jpg" loading="lazy" alt="MVC-019S.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/13/MVC-020S.JPG">
+        <img src="/album/imgs_thumb/2026/02/13/MVC-020S.jpg" loading="lazy" alt="MVC-020S.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/13/MVC-021S.JPG">
+        <img src="/album/imgs_thumb/2026/02/13/MVC-021S.jpg" loading="lazy" alt="MVC-021S.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/13/MVC-022S.JPG">
+        <img src="/album/imgs_thumb/2026/02/13/MVC-022S.jpg" loading="lazy" alt="MVC-022S.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/13/MVC-024S.JPG">
+        <img src="/album/imgs_thumb/2026/02/13/MVC-024S.jpg" loading="lazy" alt="MVC-024S.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/13/MVC-025S.JPG">
+        <img src="/album/imgs_thumb/2026/02/13/MVC-025S.jpg" loading="lazy" alt="MVC-025S.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/13/MVC-026S.JPG">
+        <img src="/album/imgs_thumb/2026/02/13/MVC-026S.jpg" loading="lazy" alt="MVC-026S.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/13/MVC-030S.JPG">
+        <img src="/album/imgs_thumb/2026/02/13/MVC-030S.jpg" loading="lazy" alt="MVC-030S.JPG">
+  </a>
+  <figcaption>I think my phone interfered with this one.</figcaption>
+</figure>
+
+</div>
+</article>
+<article class="album-day">
+<h3>Thursday 12 February 2026<span class="album-count">14 photos</span></h3>
+<div class="album-grid">
+
+<figure>
+  <a href="/album/imgs/2026/02/12/IMG_9763.JPG">
+        <img src="/album/imgs_thumb/2026/02/12/IMG_9763.jpg" loading="lazy" alt="IMG_9763.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/12/IMG_9764.JPG">
+        <img src="/album/imgs_thumb/2026/02/12/IMG_9764.jpg" loading="lazy" alt="IMG_9764.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/12/IMG_9765.JPG">
+        <img src="/album/imgs_thumb/2026/02/12/IMG_9765.jpg" loading="lazy" alt="IMG_9765.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/12/IMG_9766.JPG">
+        <img src="/album/imgs_thumb/2026/02/12/IMG_9766.jpg" loading="lazy" alt="IMG_9766.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/12/IMG_9767.JPG">
+        <img src="/album/imgs_thumb/2026/02/12/IMG_9767.jpg" loading="lazy" alt="IMG_9767.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/12/IMG_9768.JPG">
+        <img src="/album/imgs_thumb/2026/02/12/IMG_9768.jpg" loading="lazy" alt="IMG_9768.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/12/IMG_9769.JPG">
+        <img src="/album/imgs_thumb/2026/02/12/IMG_9769.jpg" loading="lazy" alt="IMG_9769.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/12/IMG_9779.JPG">
+        <img src="/album/imgs_thumb/2026/02/12/IMG_9779.jpg" loading="lazy" alt="IMG_9779.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/12/IMG_9780.JPG">
+        <img src="/album/imgs_thumb/2026/02/12/IMG_9780.jpg" loading="lazy" alt="IMG_9780.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/12/IMG_9784.JPG">
+        <img src="/album/imgs_thumb/2026/02/12/IMG_9784.jpg" loading="lazy" alt="IMG_9784.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/12/IMG_9785.JPG">
+        <img src="/album/imgs_thumb/2026/02/12/IMG_9785.jpg" loading="lazy" alt="IMG_9785.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/12/IMG_9794.JPG">
+        <img src="/album/imgs_thumb/2026/02/12/IMG_9794.jpg" loading="lazy" alt="IMG_9794.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/12/IMG_9796.JPG">
+        <img src="/album/imgs_thumb/2026/02/12/IMG_9796.jpg" loading="lazy" alt="IMG_9796.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2026/02/12/IMG_9797.JPG">
+        <img src="/album/imgs_thumb/2026/02/12/IMG_9797.jpg" loading="lazy" alt="IMG_9797.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+</div>
+</article>
+</section>
+<section class="album-month" id="m-2025-04">
+<h2>April 2025<span class="album-count">4 photos</span></h2>
+<article class="album-day">
+<h3>Saturday 05 April 2025<span class="album-count">4 photos</span></h3>
+<div class="album-grid">
+
+<figure>
+  <a href="/album/imgs/2025/04/05/AT0A5345.JPG">
+        <img src="/album/imgs_thumb/2025/04/05/AT0A5345.jpg" loading="lazy" alt="AT0A5345.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2025/04/05/AT0A5365.JPG">
+        <img src="/album/imgs_thumb/2025/04/05/AT0A5365.jpg" loading="lazy" alt="AT0A5365.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2025/04/05/AT0A5371.JPG">
+        <img src="/album/imgs_thumb/2025/04/05/AT0A5371.jpg" loading="lazy" alt="AT0A5371.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2025/04/05/AT0A5382.JPG">
+        <img src="/album/imgs_thumb/2025/04/05/AT0A5382.jpg" loading="lazy" alt="AT0A5382.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+</div>
+</article>
+</section>
+<section class="album-month" id="m-2025-03">
+<h2>March 2025<span class="album-count">9 photos</span></h2>
+<article class="album-day">
+<h3>Sunday 30 March 2025<span class="album-count">9 photos</span></h3>
+<div class="album-grid">
+
+<figure>
+  <a href="/album/imgs/2025/03/30/AT0A5291.JPG">
+        <img src="/album/imgs_thumb/2025/03/30/AT0A5291.jpg" loading="lazy" alt="AT0A5291.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2025/03/30/AT0A5294.JPG">
+        <img src="/album/imgs_thumb/2025/03/30/AT0A5294.jpg" loading="lazy" alt="AT0A5294.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2025/03/30/AT0A5299.JPG">
+        <img src="/album/imgs_thumb/2025/03/30/AT0A5299.jpg" loading="lazy" alt="AT0A5299.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2025/03/30/AT0A5302.JPG">
+        <img src="/album/imgs_thumb/2025/03/30/AT0A5302.jpg" loading="lazy" alt="AT0A5302.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2025/03/30/AT0A5305.JPG">
+        <img src="/album/imgs_thumb/2025/03/30/AT0A5305.jpg" loading="lazy" alt="AT0A5305.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2025/03/30/AT0A5332.JPG">
+        <img src="/album/imgs_thumb/2025/03/30/AT0A5332.jpg" loading="lazy" alt="AT0A5332.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2025/03/30/AT0A5334.JPG">
+        <img src="/album/imgs_thumb/2025/03/30/AT0A5334.jpg" loading="lazy" alt="AT0A5334.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2025/03/30/AT0A5339.JPG">
+        <img src="/album/imgs_thumb/2025/03/30/AT0A5339.jpg" loading="lazy" alt="AT0A5339.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2025/03/30/AT0A5344.JPG">
+        <img src="/album/imgs_thumb/2025/03/30/AT0A5344.jpg" loading="lazy" alt="AT0A5344.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+</div>
+</article>
+</section>
+<section class="album-month" id="m-2024-11">
+<h2>November 2024<span class="album-count">8 photos</span></h2>
+<article class="album-day">
+<h3>Sunday 03 November 2024<span class="album-count">1 photos</span></h3>
+<div class="album-grid">
+
+<figure>
+  <a href="/album/imgs/2024/11/03/AT0A5267.JPG">
+        <img src="/album/imgs_thumb/2024/11/03/AT0A5267.jpg" loading="lazy" alt="AT0A5267.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+</div>
+</article>
+<article class="album-day">
+<h3>Saturday 02 November 2024<span class="album-count">1 photos</span></h3>
+<div class="album-grid">
+
+<figure>
+  <a href="/album/imgs/2024/11/02/AT0A5236.JPG">
+        <img src="/album/imgs_thumb/2024/11/02/AT0A5236.jpg" loading="lazy" alt="AT0A5236.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+</div>
+</article>
+<article class="album-day">
+<h3>Friday 01 November 2024<span class="album-count">6 photos</span></h3>
+<div class="album-grid">
+
+<figure>
+  <a href="/album/imgs/2024/11/01/AT0A5080.JPG">
+        <img src="/album/imgs_thumb/2024/11/01/AT0A5080.jpg" loading="lazy" alt="AT0A5080.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/11/01/AT0A5089.JPG">
+        <img src="/album/imgs_thumb/2024/11/01/AT0A5089.jpg" loading="lazy" alt="AT0A5089.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/11/01/AT0A5096.JPG">
+        <img src="/album/imgs_thumb/2024/11/01/AT0A5096.jpg" loading="lazy" alt="AT0A5096.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/11/01/AT0A5114.JPG">
+        <img src="/album/imgs_thumb/2024/11/01/AT0A5114.jpg" loading="lazy" alt="AT0A5114.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/11/01/AT0A5149.JPG">
+        <img src="/album/imgs_thumb/2024/11/01/AT0A5149.jpg" loading="lazy" alt="AT0A5149.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/11/01/AT0A5152.JPG">
+        <img src="/album/imgs_thumb/2024/11/01/AT0A5152.jpg" loading="lazy" alt="AT0A5152.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+</div>
+</article>
+</section>
+<section class="album-month" id="m-2024-10">
+<h2>October 2024<span class="album-count">28 photos</span></h2>
+<article class="album-day">
+<h3>Thursday 31 October 2024<span class="album-count">8 photos</span></h3>
+<div class="album-grid">
+
+<figure>
+  <a href="/album/imgs/2024/10/31/AT0A4964.JPG">
+        <img src="/album/imgs_thumb/2024/10/31/AT0A4964.jpg" loading="lazy" alt="AT0A4964.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/10/31/AT0A4969.JPG">
+        <img src="/album/imgs_thumb/2024/10/31/AT0A4969.jpg" loading="lazy" alt="AT0A4969.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/10/31/AT0A4980.JPG">
+        <img src="/album/imgs_thumb/2024/10/31/AT0A4980.jpg" loading="lazy" alt="AT0A4980.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/10/31/AT0A4981.JPG">
+        <img src="/album/imgs_thumb/2024/10/31/AT0A4981.jpg" loading="lazy" alt="AT0A4981.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/10/31/AT0A4990.JPG">
+        <img src="/album/imgs_thumb/2024/10/31/AT0A4990.jpg" loading="lazy" alt="AT0A4990.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/10/31/AT0A5045.JPG">
+        <img src="/album/imgs_thumb/2024/10/31/AT0A5045.jpg" loading="lazy" alt="AT0A5045.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/10/31/AT0A5070.JPG">
+        <img src="/album/imgs_thumb/2024/10/31/AT0A5070.jpg" loading="lazy" alt="AT0A5070.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/10/31/AT0A5072.JPG">
+        <img src="/album/imgs_thumb/2024/10/31/AT0A5072.jpg" loading="lazy" alt="AT0A5072.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+</div>
+</article>
+<article class="album-day">
+<h3>Saturday 26 October 2024<span class="album-count">5 photos</span></h3>
+<div class="album-grid">
+
+<figure>
+  <a href="/album/imgs/2024/10/26/AT0A4913.JPG">
+        <img src="/album/imgs_thumb/2024/10/26/AT0A4913.jpg" loading="lazy" alt="AT0A4913.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/10/26/AT0A4922.JPG">
+        <img src="/album/imgs_thumb/2024/10/26/AT0A4922.jpg" loading="lazy" alt="AT0A4922.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/10/26/AT0A4926.JPG">
+        <img src="/album/imgs_thumb/2024/10/26/AT0A4926.jpg" loading="lazy" alt="AT0A4926.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/10/26/AT0A4934.JPG">
+        <img src="/album/imgs_thumb/2024/10/26/AT0A4934.jpg" loading="lazy" alt="AT0A4934.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/10/26/AT0A4937.JPG">
+        <img src="/album/imgs_thumb/2024/10/26/AT0A4937.jpg" loading="lazy" alt="AT0A4937.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+</div>
+</article>
+<article class="album-day">
+<h3>Thursday 17 October 2024<span class="album-count">8 photos</span></h3>
+<div class="album-grid">
+
+<figure>
+  <a href="/album/imgs/2024/10/17/AT0A4736.JPG">
+        <img src="/album/imgs_thumb/2024/10/17/AT0A4736.jpg" loading="lazy" alt="AT0A4736.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/10/17/AT0A4748.JPG">
+        <img src="/album/imgs_thumb/2024/10/17/AT0A4748.jpg" loading="lazy" alt="AT0A4748.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/10/17/AT0A4749.JPG">
+        <img src="/album/imgs_thumb/2024/10/17/AT0A4749.jpg" loading="lazy" alt="AT0A4749.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/10/17/AT0A4903.JPG">
+        <img src="/album/imgs_thumb/2024/10/17/AT0A4903.jpg" loading="lazy" alt="AT0A4903.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/10/17/AT0A4904.JPG">
+        <img src="/album/imgs_thumb/2024/10/17/AT0A4904.jpg" loading="lazy" alt="AT0A4904.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/10/17/AT0A4905.JPG">
+        <img src="/album/imgs_thumb/2024/10/17/AT0A4905.jpg" loading="lazy" alt="AT0A4905.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/10/17/AT0A4906.JPG">
+        <img src="/album/imgs_thumb/2024/10/17/AT0A4906.jpg" loading="lazy" alt="AT0A4906.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/10/17/AT0A4907.JPG">
+        <img src="/album/imgs_thumb/2024/10/17/AT0A4907.jpg" loading="lazy" alt="AT0A4907.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+</div>
+</article>
+<article class="album-day">
+<h3>Wednesday 16 October 2024<span class="album-count">6 photos</span></h3>
+<div class="album-grid">
+
+<figure>
+  <a href="/album/imgs/2024/10/16/AT0A4827.JPG">
+        <img src="/album/imgs_thumb/2024/10/16/AT0A4827.jpg" loading="lazy" alt="AT0A4827.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/10/16/AT0A4831.JPG">
+        <img src="/album/imgs_thumb/2024/10/16/AT0A4831.jpg" loading="lazy" alt="AT0A4831.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/10/16/AT0A4841.JPG">
+        <img src="/album/imgs_thumb/2024/10/16/AT0A4841.jpg" loading="lazy" alt="AT0A4841.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/10/16/AT0A4843.JPG">
+        <img src="/album/imgs_thumb/2024/10/16/AT0A4843.jpg" loading="lazy" alt="AT0A4843.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/10/16/AT0A4855.JPG">
+        <img src="/album/imgs_thumb/2024/10/16/AT0A4855.jpg" loading="lazy" alt="AT0A4855.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/10/16/AT0A4876.JPG">
+        <img src="/album/imgs_thumb/2024/10/16/AT0A4876.jpg" loading="lazy" alt="AT0A4876.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+</div>
+</article>
+<article class="album-day">
+<h3>Monday 14 October 2024<span class="album-count">1 photos</span></h3>
+<div class="album-grid">
+
+<figure>
+  <a href="/album/imgs/2024/10/14/AT0A4787.JPG">
+        <img src="/album/imgs_thumb/2024/10/14/AT0A4787.jpg" loading="lazy" alt="AT0A4787.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+</div>
+</article>
+</section>
+<section class="album-month" id="m-2024-09">
+<h2>September 2024<span class="album-count">6 photos</span></h2>
+<article class="album-day">
+<h3>Thursday 12 September 2024<span class="album-count">5 photos</span></h3>
+<div class="album-grid">
+
+<figure>
+  <a href="/album/imgs/2024/09/12/AT0A4693.JPG">
+        <img src="/album/imgs_thumb/2024/09/12/AT0A4693.jpg" loading="lazy" alt="AT0A4693.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/09/12/AT0A4702.JPG">
+        <img src="/album/imgs_thumb/2024/09/12/AT0A4702.jpg" loading="lazy" alt="AT0A4702.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/09/12/AT0A4703.JPG">
+        <img src="/album/imgs_thumb/2024/09/12/AT0A4703.jpg" loading="lazy" alt="AT0A4703.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/09/12/AT0A4706.JPG">
+        <img src="/album/imgs_thumb/2024/09/12/AT0A4706.jpg" loading="lazy" alt="AT0A4706.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/09/12/AT0A4719.JPG">
+        <img src="/album/imgs_thumb/2024/09/12/AT0A4719.jpg" loading="lazy" alt="AT0A4719.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+</div>
+</article>
+<article class="album-day">
+<h3>Thursday 05 September 2024<span class="album-count">1 photos</span></h3>
+<div class="album-grid">
+
+<figure>
+  <a href="/album/imgs/2024/09/05/AT0A4678.JPG">
+        <img src="/album/imgs_thumb/2024/09/05/AT0A4678.jpg" loading="lazy" alt="AT0A4678.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+</div>
+</article>
+</section>
+<section class="album-month" id="m-2024-08">
+<h2>August 2024<span class="album-count">24 photos</span></h2>
+<article class="album-day">
+<h3>Saturday 10 August 2024<span class="album-count">1 photos</span></h3>
+<div class="album-grid">
+
+<figure>
+  <a href="/album/imgs/2024/08/10/AT0A4500.JPG">
+        <img src="/album/imgs_thumb/2024/08/10/AT0A4500.jpg" loading="lazy" alt="AT0A4500.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+</div>
+</article>
+<article class="album-day">
+<h3>Monday 05 August 2024<span class="album-count">3 photos</span></h3>
+<div class="album-grid">
+
+<figure>
+  <a href="/album/imgs/2024/08/05/AT0A4469.JPG">
+        <img src="/album/imgs_thumb/2024/08/05/AT0A4469.jpg" loading="lazy" alt="AT0A4469.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/08/05/AT0A4470.JPG">
+        <img src="/album/imgs_thumb/2024/08/05/AT0A4470.jpg" loading="lazy" alt="AT0A4470.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/08/05/AT0A4476.JPG">
+        <img src="/album/imgs_thumb/2024/08/05/AT0A4476.jpg" loading="lazy" alt="AT0A4476.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+</div>
+</article>
+<article class="album-day">
+<h3>Sunday 04 August 2024<span class="album-count">18 photos</span></h3>
+<div class="album-grid">
+
+<figure>
+  <a href="/album/imgs/2024/08/04/AT0A4378.JPG">
+        <img src="/album/imgs_thumb/2024/08/04/AT0A4378.jpg" loading="lazy" alt="AT0A4378.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/08/04/AT0A4379.JPG">
+        <img src="/album/imgs_thumb/2024/08/04/AT0A4379.jpg" loading="lazy" alt="AT0A4379.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/08/04/AT0A4388.JPG">
+        <img src="/album/imgs_thumb/2024/08/04/AT0A4388.jpg" loading="lazy" alt="AT0A4388.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/08/04/AT0A4392.JPG">
+        <img src="/album/imgs_thumb/2024/08/04/AT0A4392.jpg" loading="lazy" alt="AT0A4392.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/08/04/AT0A4394.JPG">
+        <img src="/album/imgs_thumb/2024/08/04/AT0A4394.jpg" loading="lazy" alt="AT0A4394.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/08/04/AT0A4396.JPG">
+        <img src="/album/imgs_thumb/2024/08/04/AT0A4396.jpg" loading="lazy" alt="AT0A4396.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/08/04/AT0A4402.JPG">
+        <img src="/album/imgs_thumb/2024/08/04/AT0A4402.jpg" loading="lazy" alt="AT0A4402.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/08/04/AT0A4407.JPG">
+        <img src="/album/imgs_thumb/2024/08/04/AT0A4407.jpg" loading="lazy" alt="AT0A4407.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/08/04/AT0A4417.JPG">
+        <img src="/album/imgs_thumb/2024/08/04/AT0A4417.jpg" loading="lazy" alt="AT0A4417.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/08/04/AT0A4425.JPG">
+        <img src="/album/imgs_thumb/2024/08/04/AT0A4425.jpg" loading="lazy" alt="AT0A4425.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/08/04/AT0A4432.JPG">
+        <img src="/album/imgs_thumb/2024/08/04/AT0A4432.jpg" loading="lazy" alt="AT0A4432.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/08/04/AT0A4433.JPG">
+        <img src="/album/imgs_thumb/2024/08/04/AT0A4433.jpg" loading="lazy" alt="AT0A4433.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/08/04/AT0A4438.JPG">
+        <img src="/album/imgs_thumb/2024/08/04/AT0A4438.jpg" loading="lazy" alt="AT0A4438.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/08/04/AT0A4439.JPG">
+        <img src="/album/imgs_thumb/2024/08/04/AT0A4439.jpg" loading="lazy" alt="AT0A4439.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/08/04/AT0A4441.JPG">
+        <img src="/album/imgs_thumb/2024/08/04/AT0A4441.jpg" loading="lazy" alt="AT0A4441.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/08/04/AT0A4455.JPG">
+        <img src="/album/imgs_thumb/2024/08/04/AT0A4455.jpg" loading="lazy" alt="AT0A4455.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/08/04/AT0A4465.JPG">
+        <img src="/album/imgs_thumb/2024/08/04/AT0A4465.jpg" loading="lazy" alt="AT0A4465.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/08/04/AT0A4466.JPG">
+        <img src="/album/imgs_thumb/2024/08/04/AT0A4466.jpg" loading="lazy" alt="AT0A4466.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+</div>
+</article>
+<article class="album-day">
+<h3>Saturday 03 August 2024<span class="album-count">2 photos</span></h3>
+<div class="album-grid">
+
+<figure>
+  <a href="/album/imgs/2024/08/03/AT0A4340.JPG">
+        <img src="/album/imgs_thumb/2024/08/03/AT0A4340.jpg" loading="lazy" alt="AT0A4340.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/08/03/AT0A4360.JPG">
+        <img src="/album/imgs_thumb/2024/08/03/AT0A4360.jpg" loading="lazy" alt="AT0A4360.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+</div>
+</article>
+</section>
+<section class="album-month" id="m-2024-07">
+<h2>July 2024<span class="album-count">19 photos</span></h2>
+<article class="album-day">
+<h3>Friday 19 July 2024<span class="album-count">1 photos</span></h3>
+<div class="album-grid">
+
+<figure>
+  <a href="/album/imgs/2024/07/19/AT0A4335.JPG">
+        <img src="/album/imgs_thumb/2024/07/19/AT0A4335.jpg" loading="lazy" alt="AT0A4335.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+</div>
+</article>
+<article class="album-day">
+<h3>Wednesday 10 July 2024<span class="album-count">2 photos</span></h3>
+<div class="album-grid">
+
+<figure>
+  <a href="/album/imgs/2024/07/10/AT0A4241.JPG">
+        <img src="/album/imgs_thumb/2024/07/10/AT0A4241.jpg" loading="lazy" alt="AT0A4241.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/07/10/AT0A4252.JPG">
+        <img src="/album/imgs_thumb/2024/07/10/AT0A4252.jpg" loading="lazy" alt="AT0A4252.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+</div>
+</article>
+<article class="album-day">
+<h3>Saturday 06 July 2024<span class="album-count">16 photos</span></h3>
+<div class="album-grid">
+
+<figure>
+  <a href="/album/imgs/2024/07/06/AT0A3628.JPG">
+        <img src="/album/imgs_thumb/2024/07/06/AT0A3628.jpg" loading="lazy" alt="AT0A3628.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/07/06/AT0A3629.JPG">
+        <img src="/album/imgs_thumb/2024/07/06/AT0A3629.jpg" loading="lazy" alt="AT0A3629.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/07/06/AT0A3633.JPG">
+        <img src="/album/imgs_thumb/2024/07/06/AT0A3633.jpg" loading="lazy" alt="AT0A3633.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/07/06/AT0A3638.JPG">
+        <img src="/album/imgs_thumb/2024/07/06/AT0A3638.jpg" loading="lazy" alt="AT0A3638.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/07/06/AT0A3639.JPG">
+        <img src="/album/imgs_thumb/2024/07/06/AT0A3639.jpg" loading="lazy" alt="AT0A3639.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/07/06/AT0A3640.JPG">
+        <img src="/album/imgs_thumb/2024/07/06/AT0A3640.jpg" loading="lazy" alt="AT0A3640.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/07/06/AT0A3643.JPG">
+        <img src="/album/imgs_thumb/2024/07/06/AT0A3643.jpg" loading="lazy" alt="AT0A3643.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/07/06/AT0A3647.JPG">
+        <img src="/album/imgs_thumb/2024/07/06/AT0A3647.jpg" loading="lazy" alt="AT0A3647.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/07/06/AT0A3667.JPG">
+        <img src="/album/imgs_thumb/2024/07/06/AT0A3667.jpg" loading="lazy" alt="AT0A3667.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/07/06/AT0A3697.JPG">
+        <img src="/album/imgs_thumb/2024/07/06/AT0A3697.jpg" loading="lazy" alt="AT0A3697.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/07/06/AT0A3698.JPG">
+        <img src="/album/imgs_thumb/2024/07/06/AT0A3698.jpg" loading="lazy" alt="AT0A3698.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/07/06/AT0A3706.JPG">
+        <img src="/album/imgs_thumb/2024/07/06/AT0A3706.jpg" loading="lazy" alt="AT0A3706.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/07/06/AT0A3710.JPG">
+        <img src="/album/imgs_thumb/2024/07/06/AT0A3710.jpg" loading="lazy" alt="AT0A3710.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/07/06/AT0A3730.JPG">
+        <img src="/album/imgs_thumb/2024/07/06/AT0A3730.jpg" loading="lazy" alt="AT0A3730.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/07/06/AT0A3741.JPG">
+        <img src="/album/imgs_thumb/2024/07/06/AT0A3741.jpg" loading="lazy" alt="AT0A3741.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2024/07/06/AT0A3747.JPG">
+        <img src="/album/imgs_thumb/2024/07/06/AT0A3747.jpg" loading="lazy" alt="AT0A3747.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+</div>
+</article>
+</section>
+<section class="album-month" id="m-2018-07">
+<h2>July 2018<span class="album-count">16 photos</span></h2>
+<article class="album-day">
+<h3>Friday 13 July 2018<span class="album-count">2 photos</span></h3>
+<div class="album-grid">
+
+<figure>
+  <a href="/album/imgs/2018/07/13/IMGA0345.JPG">
+        <img src="/album/imgs_thumb/2018/07/13/IMGA0345.jpg" loading="lazy" alt="IMGA0345.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2018/07/13/IMGA0346.JPG">
+        <img src="/album/imgs_thumb/2018/07/13/IMGA0346.jpg" loading="lazy" alt="IMGA0346.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+</div>
+</article>
+<article class="album-day">
+<h3>Tuesday 10 July 2018<span class="album-count">4 photos</span></h3>
+<div class="album-grid">
+
+<figure>
+  <a href="/album/imgs/2018/07/10/IMGA0326.JPG">
+        <img src="/album/imgs_thumb/2018/07/10/IMGA0326.jpg" loading="lazy" alt="IMGA0326.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2018/07/10/IMGA0336.JPG">
+        <img src="/album/imgs_thumb/2018/07/10/IMGA0336.jpg" loading="lazy" alt="IMGA0336.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2018/07/10/IMGA0341.JPG">
+        <img src="/album/imgs_thumb/2018/07/10/IMGA0341.jpg" loading="lazy" alt="IMGA0341.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2018/07/10/IMGA0342.JPG">
+        <img src="/album/imgs_thumb/2018/07/10/IMGA0342.jpg" loading="lazy" alt="IMGA0342.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+</div>
+</article>
+<article class="album-day">
+<h3>Monday 09 July 2018<span class="album-count">4 photos</span></h3>
+<div class="album-grid">
+
+<figure>
+  <a href="/album/imgs/2018/07/09/IMGA0311.JPG">
+        <img src="/album/imgs_thumb/2018/07/09/IMGA0311.jpg" loading="lazy" alt="IMGA0311.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2018/07/09/IMGA0317.JPG">
+        <img src="/album/imgs_thumb/2018/07/09/IMGA0317.jpg" loading="lazy" alt="IMGA0317.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2018/07/09/IMGA0318.JPG">
+        <img src="/album/imgs_thumb/2018/07/09/IMGA0318.jpg" loading="lazy" alt="IMGA0318.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2018/07/09/IMGA0319.JPG">
+        <img src="/album/imgs_thumb/2018/07/09/IMGA0319.jpg" loading="lazy" alt="IMGA0319.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+</div>
+</article>
+<article class="album-day">
+<h3>Sunday 08 July 2018<span class="album-count">2 photos</span></h3>
+<div class="album-grid">
+
+<figure>
+  <a href="/album/imgs/2018/07/08/IMGA0293.JPG">
+        <img src="/album/imgs_thumb/2018/07/08/IMGA0293.jpg" loading="lazy" alt="IMGA0293.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2018/07/08/IMGA0298.JPG">
+        <img src="/album/imgs_thumb/2018/07/08/IMGA0298.jpg" loading="lazy" alt="IMGA0298.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+</div>
+</article>
+<article class="album-day">
+<h3>Saturday 07 July 2018<span class="album-count">4 photos</span></h3>
+<div class="album-grid">
+
+<figure>
+  <a href="/album/imgs/2018/07/07/IMGA0257.JPG">
+        <img src="/album/imgs_thumb/2018/07/07/IMGA0257.jpg" loading="lazy" alt="IMGA0257.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2018/07/07/IMGA0259.JPG">
+        <img src="/album/imgs_thumb/2018/07/07/IMGA0259.jpg" loading="lazy" alt="IMGA0259.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2018/07/07/IMGA0262.JPG">
+        <img src="/album/imgs_thumb/2018/07/07/IMGA0262.jpg" loading="lazy" alt="IMGA0262.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2018/07/07/IMGA0277.JPG">
+        <img src="/album/imgs_thumb/2018/07/07/IMGA0277.jpg" loading="lazy" alt="IMGA0277.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+</div>
+</article>
+</section>
+<section class="album-month" id="m-2018-02">
+<h2>February 2018<span class="album-count">5 photos</span></h2>
+<article class="album-day">
+<h3>Wednesday 14 February 2018<span class="album-count">5 photos</span></h3>
+<div class="album-grid">
+
+<figure>
+  <a href="/album/imgs/2018/02/14/IMGA0204.JPG">
+        <img src="/album/imgs_thumb/2018/02/14/IMGA0204.jpg" loading="lazy" alt="IMGA0204.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2018/02/14/IMGA0211.JPG">
+        <img src="/album/imgs_thumb/2018/02/14/IMGA0211.jpg" loading="lazy" alt="IMGA0211.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2018/02/14/IMGA0213.JPG">
+        <img src="/album/imgs_thumb/2018/02/14/IMGA0213.jpg" loading="lazy" alt="IMGA0213.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2018/02/14/IMGA0239.JPG">
+        <img src="/album/imgs_thumb/2018/02/14/IMGA0239.jpg" loading="lazy" alt="IMGA0239.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2018/02/14/IMGA0241.JPG">
+        <img src="/album/imgs_thumb/2018/02/14/IMGA0241.jpg" loading="lazy" alt="IMGA0241.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+</div>
+</article>
+</section>
+<section class="album-month" id="m-2017-09">
+<h2>September 2017<span class="album-count">2 photos</span></h2>
+<article class="album-day">
+<h3>Wednesday 20 September 2017<span class="album-count">2 photos</span></h3>
+<div class="album-grid">
+
+<figure>
+  <a href="/album/imgs/2017/09/20/CIMG5218.JPG">
+        <img src="/album/imgs_thumb/2017/09/20/CIMG5218.jpg" loading="lazy" alt="CIMG5218.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2017/09/20/CIMG5223.JPG">
+        <img src="/album/imgs_thumb/2017/09/20/CIMG5223.jpg" loading="lazy" alt="CIMG5223.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+</div>
+</article>
+</section>
+<section class="album-month" id="m-2017-08">
+<h2>August 2017<span class="album-count">11 photos</span></h2>
+<article class="album-day">
+<h3>Thursday 17 August 2017<span class="album-count">5 photos</span></h3>
+<div class="album-grid">
+
+<figure>
+  <a href="/album/imgs/2017/08/17/IMGA0163.JPG">
+        <img src="/album/imgs_thumb/2017/08/17/IMGA0163.jpg" loading="lazy" alt="IMGA0163.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2017/08/17/IMGA0164.JPG">
+        <img src="/album/imgs_thumb/2017/08/17/IMGA0164.jpg" loading="lazy" alt="IMGA0164.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2017/08/17/IMGA0165.JPG">
+        <img src="/album/imgs_thumb/2017/08/17/IMGA0165.jpg" loading="lazy" alt="IMGA0165.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2017/08/17/IMGA0166.JPG">
+        <img src="/album/imgs_thumb/2017/08/17/IMGA0166.jpg" loading="lazy" alt="IMGA0166.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2017/08/17/IMGA0167.JPG">
+        <img src="/album/imgs_thumb/2017/08/17/IMGA0167.jpg" loading="lazy" alt="IMGA0167.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+</div>
+</article>
+<article class="album-day">
+<h3>Tuesday 15 August 2017<span class="album-count">6 photos</span></h3>
+<div class="album-grid">
+
+<figure>
+  <a href="/album/imgs/2017/08/15/IMGA0047.JPG">
+        <img src="/album/imgs_thumb/2017/08/15/IMGA0047.jpg" loading="lazy" alt="IMGA0047.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2017/08/15/IMGA0050.JPG">
+        <img src="/album/imgs_thumb/2017/08/15/IMGA0050.jpg" loading="lazy" alt="IMGA0050.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2017/08/15/IMGA0056.JPG">
+        <img src="/album/imgs_thumb/2017/08/15/IMGA0056.jpg" loading="lazy" alt="IMGA0056.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2017/08/15/IMGA0060.JPG">
+        <img src="/album/imgs_thumb/2017/08/15/IMGA0060.jpg" loading="lazy" alt="IMGA0060.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2017/08/15/IMGA0075.JPG">
+        <img src="/album/imgs_thumb/2017/08/15/IMGA0075.jpg" loading="lazy" alt="IMGA0075.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+
+<figure>
+  <a href="/album/imgs/2017/08/15/IMGA0100.JPG">
+        <img src="/album/imgs_thumb/2017/08/15/IMGA0100.jpg" loading="lazy" alt="IMGA0100.JPG">
+  </a>
+  <figcaption><span class="album-empty-caption">No caption.</span></figcaption>
+</figure>
+
+</div>
+</article>
+</section>
+</div>
+        </div>
+
+</body>
+<script>
+    document.body.classList.remove("basic");
+    document.getElementById("compatibility-warning").style.display = "none";
+</script>
+
+</html>
