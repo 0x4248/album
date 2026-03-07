@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0x4248 Album — Fullscreen Photobook</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            margin: 0;
+            position: relative;
+            background: #000;
+            color: var(--primary-color);
+        }
+
+        .music-bg {
+            position: fixed;
+            inset: 0;
+            z-index: -3;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .music-bg iframe {
+            width: 100vw;
+            height: 56.25vw;
+            min-height: 100vh;
+            min-width: 177.78vh;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.28;
+            filter: grayscale(100%);
+        }
+
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: -2;
+        }
+
+        .frame {
+            height: 100vh;
+            width: 100vw;
+            max-width: none;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            padding: 10px;
+            box-sizing: border-box;
+            gap: 8px;
+        }
+
+        .topline {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            background: rgba(0, 0, 0, 0.35);
+            padding: 6px 10px;
+            opacity: 0;
+            transform: translateY(-8px);
+            transition: opacity 700ms ease, transform 1000ms ease;
+        }
+
+        .topline.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .viewer {
+            border: 1px solid var(--border-color);
+            background: rgba(0, 0, 0, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 0;
+            padding: 10px;
+            opacity: 0;
+            transform: scale(0.99);
+            transition: opacity 900ms ease, transform 900ms ease;
+        }
+
+        .viewer.is-visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .viewer img {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border: 1px solid var(--border-color);
+            background: #111;
+            opacity: 0;
+            transition: opacity 1200ms ease-in-out;
+            image-rendering: pixelated;
+        }
+
+        .viewer img.is-visible {
+            opacity: 1;
+        }
+
+        .viewer img.is-fading {
+            opacity: 0;
+            transition-duration: 320ms;
+        }
+
+        .meta {
+            border: 1px solid var(--border-color);
+            background: rgba(0, 0, 0, 0.35);
+            padding: 8px 10px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 8px;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(6px);
+            pointer-events: none;
+            transition: opacity 700ms ease, transform 700ms ease;
+        }
+
+        .meta.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .date {
+            color: var(--h2-color);
+            margin-bottom: 4px;
+            font-family: 'Departure Mono', monospace;
+        }
+
+        .caption {
+            color: var(--primary-color);
+            min-height: 1.2em;
+        }
+
+        .controls {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        .controls button {
+            font: inherit;
+            color: var(--primary-color);
+            background: var(--content-bg);
+            border: 1px solid var(--border-color);
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .controls button:hover {
+            background: var(--link-hover-bg);
+            color: #000;
+        }
+
+        .counter {
+            color: var(--italic-color);
+            font-size: 12px;
+            text-align: right;
+        }
+
+        .welcome-screen {
+            position: fixed;
+            inset: 0;
+            z-index: 20;
+            display: grid;
+            place-items: center;
+            background: rgba(0, 0, 0, 0.86);
+            transition: opacity 700ms ease;
+        }
+
+        .welcome-screen.is-hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .welcome-card {
+            border: 1px solid var(--border-color);
+            background: color-mix(in srgb, var(--content-bg) 88%, black);
+            max-width: 620px;
+            margin: 16px;
+            padding: 16px;
+        }
+
+        .welcome-card h1 {
+            margin: 0 0 10px 0;
+            color: var(--h2-color);
+        }
+
+        .welcome-card p {
+            margin: 0 0 8px 0;
+            line-height: 1.3;
+        }
+
+        .welcome-card button {
+            margin-top: 10px;
+            font: inherit;
+            color: var(--primary-color);
+            background: var(--content-bg);
+            border: 1px solid var(--border-color);
+            padding: 7px 12px;
+            cursor: pointer;
+        }
+
+        .welcome-card button:hover {
+            background: var(--link-hover-bg);
+            color: #000;
+        }
+
+        @media screen and (max-width: 700px) {
+            .meta {
+                grid-template-columns: 1fr;
+            }
+
+            .controls {
+                justify-content: flex-start;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="music-bg">
+        <iframe
+            id="musicFrame"
+            src="https://www.youtube-nocookie.com/embed/{{ youtube_video_id }}?autoplay=1&mute=1&controls=0&loop=1&playlist={{ youtube_video_id }}&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1"
+            title="Background music"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+        </iframe>
+    </div>
+    <div class="overlay"></div>
+
+    <section class="welcome-screen" id="welcomeScreen">
+        <div class="welcome-card">
+            <h1>Welcome to Fullscreen Photobook</h1>
+            <p>Use ← / → or the buttons to move through photos.</p>
+            <p>Press <b>M</b> or use the music button to mute/unmute the background track.</p>
+            <p>Click continue to start: the selected photo will fade in, then controls appear.</p>
+            <button id="continueBtn" type="button">Continue</button>
+        </div>
+    </section>
+
+    <main class="frame">
+        <div class="topline" id="toplineBar">
+            <div><span class="logo" style="font-size:22px;">0x4248 MEDIA</span></div>
+            <div><a href="/album/">Back to album</a></div>
+        </div>
+
+        <section class="viewer" id="viewerPanel">
+            <img id="photo" src="" alt="Photobook image" loading="eager">
+        </section>
+
+        <section class="meta" id="metaPanel">
+            <div>
+                <div class="date" id="dateText"></div>
+                <div class="caption" id="captionText"></div>
+                <div class="counter" id="counterText"></div>
+            </div>
+            <div class="controls">
+                <button id="prevBtn" type="button">← Prev</button>
+                <button id="nextBtn" type="button">Next →</button>
+                <button id="muteBtn" type="button">▶ Start music</button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const photos = {{ photo_data_json }};
+        const musicVideoId = '{{ youtube_video_id }}';
+        let index = 0;
+        let musicMuted = true;
+        let musicStarted = false;
+        let experienceStarted = false;
+        let renderSwapTimer = null;
+        const preloadCache = new Map();
+
+        const photoEl = document.getElementById('photo');
+        const dateTextEl = document.getElementById('dateText');
+        const captionTextEl = document.getElementById('captionText');
+        const counterTextEl = document.getElementById('counterText');
+        const musicFrameEl = document.getElementById('musicFrame');
+        const muteBtnEl = document.getElementById('muteBtn');
+        const welcomeEl = document.getElementById('welcomeScreen');
+        const continueBtnEl = document.getElementById('continueBtn');
+        const metaEl = document.getElementById('metaPanel');
+        const toplineEl = document.getElementById('toplineBar');
+        const viewerEl = document.getElementById('viewerPanel');
+
+        function musicSrc(muted) {
+            const muteValue = muted ? '1' : '0';
+            return 'https://www.youtube-nocookie.com/embed/' + musicVideoId
+                + '?autoplay=1&mute=' + muteValue
+                + '&controls=0&loop=1&playlist=' + musicVideoId
+                + '&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1';
+        }
+
+        function updateMuteButton() {
+            if (!musicStarted) {
+                muteBtnEl.textContent = '▶ Start music';
+            } else {
+                muteBtnEl.textContent = musicMuted ? '🔇 Unmute music' : '🔊 Mute music';
+            }
+        }
+
+        function toggleMute() {
+            if (!musicStarted) {
+                musicStarted = true;
+                musicMuted = false;
+                musicFrameEl.src = musicSrc(false);
+                updateMuteButton();
+                return;
+            }
+
+            if (musicMuted) {
+                musicMuted = false;
+                musicFrameEl.src = musicSrc(false);
+            } else {
+                musicMuted = true;
+                musicFrameEl.src = musicSrc(true);
+            }
+
+            updateMuteButton();
+        }
+
+        function applyPhoto(item) {
+            photoEl.src = item.path;
+            photoEl.alt = item.name;
+            dateTextEl.textContent = item.date;
+            captionTextEl.textContent = item.caption || 'No caption.';
+            counterTextEl.textContent = (index + 1) + ' / ' + photos.length;
+            window.location.hash = 'p-' + index;
+            preloadAround(index);
+        }
+
+        function preloadAt(photoIndex) {
+            const photo = photos[photoIndex];
+            if (!photo) return;
+            if (preloadCache.has(photo.path)) return;
+
+            const img = new Image();
+            img.decoding = 'async';
+            img.src = photo.path;
+            preloadCache.set(photo.path, img);
+
+            if (preloadCache.size > 12) {
+                const oldestKey = preloadCache.keys().next().value;
+                preloadCache.delete(oldestKey);
+            }
+        }
+
+        function preloadAround(currentIndex) {
+            if (!photos.length) return;
+            if (photos.length === 1) {
+                preloadAt(currentIndex);
+                return;
+            }
+
+            const prevIndex = (currentIndex - 1 + photos.length) % photos.length;
+            const nextIndex = (currentIndex + 1) % photos.length;
+            preloadAt(prevIndex);
+            preloadAt(nextIndex);
+        }
+
+        function render(withFade = true) {
+            if (!photos.length) {
+                dateTextEl.textContent = 'No photos found';
+                captionTextEl.textContent = '';
+                counterTextEl.textContent = '';
+                photoEl.removeAttribute('src');
+                return;
+            }
+
+            const item = photos[index];
+            const hasExistingImage = Boolean(photoEl.getAttribute('src'));
+
+            if (renderSwapTimer) {
+                clearTimeout(renderSwapTimer);
+                renderSwapTimer = null;
+            }
+
+            if (withFade && hasExistingImage) {
+                photoEl.classList.add('is-fading');
+                renderSwapTimer = setTimeout(() => {
+                    applyPhoto(item);
+                    photoEl.classList.remove('is-fading');
+                }, 190);
+                return;
+            }
+
+            applyPhoto(item);
+        }
+
+        function prev() {
+            if (!experienceStarted || !photos.length) return;
+            index = (index - 1 + photos.length) % photos.length;
+            render();
+        }
+
+        function next() {
+            if (!experienceStarted || !photos.length) return;
+            index = (index + 1) % photos.length;
+            render();
+        }
+
+        function startExperience() {
+            if (experienceStarted) return;
+            experienceStarted = true;
+
+            welcomeEl.classList.add('is-hidden');
+
+            musicStarted = true;
+            musicMuted = false;
+            musicFrameEl.src = musicSrc(false);
+            updateMuteButton();
+
+            render(false);
+            requestAnimationFrame(() => {
+                toplineEl.classList.add('is-visible');
+                viewerEl.classList.add('is-visible');
+                photoEl.classList.add('is-visible');
+            });
+
+            setTimeout(() => {
+                metaEl.classList.add('is-visible');
+            }, 900);
+
+            setTimeout(() => {
+                welcomeEl.remove();
+            }, 750);
+        }
+
+        document.getElementById('prevBtn').addEventListener('click', prev);
+        document.getElementById('nextBtn').addEventListener('click', next);
+        muteBtnEl.addEventListener('click', toggleMute);
+        continueBtnEl.addEventListener('click', startExperience);
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowLeft') prev();
+            if (event.key === 'ArrowRight') next();
+            if (event.key.toLowerCase() === 'm' && experienceStarted) toggleMute();
+            if (!experienceStarted && (event.key === 'Enter' || event.key === ' ')) {
+                event.preventDefault();
+                startExperience();
+            }
+        });
+
+        if (window.location.hash.startsWith('#p-')) {
+            const parsed = Number(window.location.hash.replace('#p-', ''));
+            if (Number.isInteger(parsed) && parsed >= 0 && parsed < photos.length) {
+                index = parsed;
+            }
+        }
+
+        updateMuteButton();
+    </script>
+</body>
+</html>

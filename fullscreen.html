@@ -65,6 +65,14 @@
             border: 1px solid var(--border-color);
             background: rgba(0, 0, 0, 0.35);
             padding: 6px 10px;
+            opacity: 0;
+            transform: translateY(-8px);
+            transition: opacity 700ms ease, transform 1000ms ease;
+        }
+
+        .topline.is-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .viewer {
@@ -75,6 +83,14 @@
             justify-content: center;
             min-height: 0;
             padding: 10px;
+            opacity: 0;
+            transform: scale(0.99);
+            transition: opacity 900ms ease, transform 900ms ease;
+        }
+
+        .viewer.is-visible {
+            opacity: 1;
+            transform: scale(1);
         }
 
         .viewer img {
@@ -85,13 +101,18 @@
             object-fit: contain;
             border: 1px solid var(--border-color);
             background: #111;
-            opacity: 1;
-            transition: opacity 320ms ease-in-out;
+            opacity: 0;
+            transition: opacity 1200ms ease-in-out;
             image-rendering: pixelated;
+        }
+
+        .viewer img.is-visible {
+            opacity: 1;
         }
 
         .viewer img.is-fading {
             opacity: 0;
+            transition-duration: 320ms;
         }
 
         .meta {
@@ -102,6 +123,16 @@
             grid-template-columns: 1fr auto;
             gap: 8px;
             align-items: center;
+            opacity: 0;
+            transform: translateY(6px);
+            pointer-events: none;
+            transition: opacity 700ms ease, transform 700ms ease;
+        }
+
+        .meta.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
         }
 
         .date {
@@ -142,6 +173,54 @@
             text-align: right;
         }
 
+        .welcome-screen {
+            position: fixed;
+            inset: 0;
+            z-index: 20;
+            display: grid;
+            place-items: center;
+            background: rgba(0, 0, 0, 0.86);
+            transition: opacity 700ms ease;
+        }
+
+        .welcome-screen.is-hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .welcome-card {
+            border: 1px solid var(--border-color);
+            background: color-mix(in srgb, var(--content-bg) 88%, black);
+            max-width: 620px;
+            margin: 16px;
+            padding: 16px;
+        }
+
+        .welcome-card h1 {
+            margin: 0 0 10px 0;
+            color: var(--h2-color);
+        }
+
+        .welcome-card p {
+            margin: 0 0 8px 0;
+            line-height: 1.3;
+        }
+
+        .welcome-card button {
+            margin-top: 10px;
+            font: inherit;
+            color: var(--primary-color);
+            background: var(--content-bg);
+            border: 1px solid var(--border-color);
+            padding: 7px 12px;
+            cursor: pointer;
+        }
+
+        .welcome-card button:hover {
+            background: var(--link-hover-bg);
+            color: #000;
+        }
+
         @media screen and (max-width: 700px) {
             .meta {
                 grid-template-columns: 1fr;
@@ -166,17 +245,27 @@
     </div>
     <div class="overlay"></div>
 
+    <section class="welcome-screen" id="welcomeScreen">
+        <div class="welcome-card">
+            <h1>Welcome to Fullscreen Photobook</h1>
+            <p>Use ← / → or the buttons to move through photos.</p>
+            <p>Press <b>M</b> or use the music button to mute/unmute the background track.</p>
+            <p>Click continue to start: the selected photo will fade in, then controls appear.</p>
+            <button id="continueBtn" type="button">Continue</button>
+        </div>
+    </section>
+
     <main class="frame">
-        <div class="topline">
+        <div class="topline" id="toplineBar">
             <div><span class="logo" style="font-size:22px;">0x4248 MEDIA</span></div>
             <div><a href="/album/">Back to album</a></div>
         </div>
 
-        <section class="viewer">
+        <section class="viewer" id="viewerPanel">
             <img id="photo" src="" alt="Photobook image" loading="eager">
         </section>
 
-        <section class="meta">
+        <section class="meta" id="metaPanel">
             <div>
                 <div class="date" id="dateText"></div>
                 <div class="caption" id="captionText"></div>
@@ -196,6 +285,7 @@
         let index = 0;
         let musicMuted = true;
         let musicStarted = false;
+        let experienceStarted = false;
         let renderSwapTimer = null;
         const preloadCache = new Map();
 
@@ -205,6 +295,11 @@
         const counterTextEl = document.getElementById('counterText');
         const musicFrameEl = document.getElementById('musicFrame');
         const muteBtnEl = document.getElementById('muteBtn');
+        const welcomeEl = document.getElementById('welcomeScreen');
+        const continueBtnEl = document.getElementById('continueBtn');
+        const metaEl = document.getElementById('metaPanel');
+        const toplineEl = document.getElementById('toplineBar');
+        const viewerEl = document.getElementById('viewerPanel');
 
         function musicSrc(muted) {
             const muteValue = muted ? '1' : '0';
@@ -311,24 +406,56 @@
         }
 
         function prev() {
-            if (!photos.length) return;
+            if (!experienceStarted || !photos.length) return;
             index = (index - 1 + photos.length) % photos.length;
             render();
         }
 
         function next() {
-            if (!photos.length) return;
+            if (!experienceStarted || !photos.length) return;
             index = (index + 1) % photos.length;
             render();
+        }
+
+        function startExperience() {
+            if (experienceStarted) return;
+            experienceStarted = true;
+
+            welcomeEl.classList.add('is-hidden');
+
+            musicStarted = true;
+            musicMuted = false;
+            musicFrameEl.src = musicSrc(false);
+            updateMuteButton();
+
+            render(false);
+            requestAnimationFrame(() => {
+                toplineEl.classList.add('is-visible');
+                viewerEl.classList.add('is-visible');
+                photoEl.classList.add('is-visible');
+            });
+
+            setTimeout(() => {
+                metaEl.classList.add('is-visible');
+            }, 900);
+
+            setTimeout(() => {
+                welcomeEl.remove();
+            }, 750);
         }
 
         document.getElementById('prevBtn').addEventListener('click', prev);
         document.getElementById('nextBtn').addEventListener('click', next);
         muteBtnEl.addEventListener('click', toggleMute);
+        continueBtnEl.addEventListener('click', startExperience);
         document.addEventListener('keydown', (event) => {
             if (event.key === 'ArrowLeft') prev();
             if (event.key === 'ArrowRight') next();
-            if (event.key.toLowerCase() === 'm') toggleMute();
+            if (event.key.toLowerCase() === 'm' && experienceStarted) toggleMute();
+            if (!experienceStarted && (event.key === 'Enter' || event.key === ' ')) {
+                event.preventDefault();
+                startExperience();
+            }
         });
 
         if (window.location.hash.startsWith('#p-')) {
@@ -339,7 +466,6 @@
         }
 
         updateMuteButton();
-        render(false);
     </script>
 </body>
 </html>

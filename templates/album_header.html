@@ -1,0 +1,134 @@
+<style>
+.album-wrap {
+    border: 1px dashed var(--border-color);
+    padding: 12px;
+}
+
+.album-wrap .album-title {
+    margin-bottom: 8px;
+}
+
+.album-wrap .album-intro {
+    margin-bottom: 8px;
+}
+
+.album-wrap .album-copy i {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.album-wrap .camera-shelf {
+    border: 1px solid var(--border-color);
+    background-color: color-mix(in srgb, var(--primary-bg) 70%, var(--content-bg));
+    padding: 8px;
+    margin: 12px 0;
+}
+
+.album-wrap .camera-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.album-wrap .camera-strip img {
+    width: 180px;
+    height: auto;
+    border: 1px solid var(--border-color);
+}
+
+.album-wrap .album-jump {
+    border-top: 1px solid var(--hr-color);
+    border-bottom: 1px solid var(--hr-color);
+    padding: 8px 0;
+    margin: 12px 0;
+}
+
+.album-wrap .album-month {
+    margin-top: 16px;
+}
+
+.album-wrap .album-month h2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.album-wrap .album-day {
+    margin-bottom: 16px;
+    border-top: 1px solid var(--hr-color);
+    padding-top: 8px;
+}
+
+.album-wrap .album-day h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.album-wrap .album-count {
+    font-size: 12px;
+    color: var(--italic-color);
+}
+
+.album-wrap .album-day-note {
+    margin-bottom: 8px;
+}
+
+.album-wrap .album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+}
+
+.album-wrap figure {
+    float: none;
+    width: auto;
+    margin: 0;
+    height: auto;
+    overflow: visible;
+    border: 1px solid var(--border-color);
+    padding: 6px;
+    background-color: color-mix(in srgb, var(--primary-bg) 65%, var(--content-bg));
+}
+
+.album-wrap figure img {
+    width: 100%;
+    max-height: 260px;
+    object-fit: contain;
+    margin-bottom: 4px;
+}
+
+.album-wrap figcaption {
+    color: var(--italic-color);
+    height: auto;
+    overflow: visible;
+    line-height: 1.2em;
+    font-size: 12px;
+    text-align: left;
+}
+
+.album-wrap .album-empty-caption {
+    opacity: 0.6;
+}
+</style>
+
+<div class="album-wrap">
+<p class="logo">My Album</p>
+<p class="album-intro">Photos from my life, organised by date with some captions. No AI and real cameras used from the 90s to the present day.</p>
+<p class="album-intro">Contains images from 4248 Media and the 4248 Arial Space Photography Laboratory (4248 ASPL).</p>
+<div class="album-copy">
+<i>© 2026 4248 Media, A part of 0x4248. Licensed under the Creative Commons Attribution-ShareAlike 4.0 License (CC BY-SA 4.0).</i>
+<i>© 2026 4248 ASPL (4248 Arial Space Photography Laboratory), A part of 0x4248. Licensed under the Creative Commons Attribution-ShareAlike 4.0 License (CC BY-SA 4.0).</i>
+<i>© 2026 0x4248.</i>
+</div>
+
+<div class="camera-shelf">
+<h2>My camera collection:</h2>
+<div class="camera-strip">
+<img src="/album/cam_imgs/SONY_Mavica.jpg" loading="lazy" width="200" alt="Sony Mavica camera">
+<img src="/album/cam_imgs/Canon_4000D.jpg" loading="lazy" width="200" alt="Canon 4000D camera">
+<img src="/album/cam_imgs/Canon_5D.jpg" loading="lazy" width="200" alt="Canon 5D camera">
+</div>
+</div>
+
+<p><a href="/album/fullscreen.html">Open fullscreen photobook mode</a></p>
