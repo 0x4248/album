@@ -1,3 +1,5 @@
+# Vibecoded:  I do not take credit for this code.
+
 import os
 import html
 import json
