@@ -17,7 +17,7 @@ ALBUM_HEADER_TEMPLATE_FILE = os.path.join(TEMPLATES_DIR, "album_header.html")
 FULLSCREEN_TEMPLATE_FILE = os.path.join(TEMPLATES_DIR, "fullscreen_template.html")
 THUMB_MAX_SIZE = (640, 640)
 THUMB_QUALITY = 90
-YOUTUBE_VIDEO_ID = "GA3NJXFjwxc"
+YOUTUBE_VIDEO_ID = "J1NEO3vWU0c"
 
 def read_template(file_path):
     with open(file_path, "r", encoding="utf-8") as f:
