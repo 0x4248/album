@@ -17,7 +17,9 @@ ALBUM_HEADER_TEMPLATE_FILE = os.path.join(TEMPLATES_DIR, "album_header.html")
 FULLSCREEN_TEMPLATE_FILE = os.path.join(TEMPLATES_DIR, "fullscreen_template.html")
 THUMB_MAX_SIZE = (640, 640)
 THUMB_QUALITY = 90
-YOUTUBE_VIDEO_ID = "J1NEO3vWU0c"
+YOUTUBE_VIDEO_IDS = [
+    "ySDXN9SP9CA",
+]
 
 def read_template(file_path):
     with open(file_path, "r", encoding="utf-8") as f:
@@ -220,8 +222,9 @@ def generate_album_html(months):
 
 def generate_fullscreen_html(months):
     photo_data_json = json.dumps(flatten_photo_data(months), ensure_ascii=False)
+    youtube_ids_json = json.dumps(YOUTUBE_VIDEO_IDS, ensure_ascii=False)
     html_text = FULLSCREEN_TEMPLATE.replace("{{ photo_data_json }}", photo_data_json)
-    html_text = html_text.replace("{{ youtube_video_id }}", YOUTUBE_VIDEO_ID)
+    html_text = html_text.replace("{{ youtube_video_ids_json }}", youtube_ids_json)
     return html_text
 
 

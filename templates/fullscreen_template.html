@@ -27,7 +27,7 @@
             overflow: hidden;
         }
 
-        .music-bg iframe {
+        .music-bg iframe, #musicPlayer iframe {
             width: 100vw;
             height: 56.25vw;
             min-height: 100vh;
@@ -235,13 +235,7 @@
 </head>
 <body>
     <div class="music-bg">
-        <iframe
-            id="musicFrame"
-            src="https://www.youtube-nocookie.com/embed/{{ youtube_video_id }}?autoplay=1&mute=1&controls=0&loop=1&playlist={{ youtube_video_id }}&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1"
-            title="Background music"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen>
-        </iframe>
+        <div id="musicPlayer" title="Background music" aria-hidden="true"></div>
     </div>
     <div class="overlay"></div>
 
@@ -284,7 +278,7 @@
 
     <script>
         const photos = {{ photo_data_json }};
-        const musicVideoId = '{{ youtube_video_id }}';
+        const musicVideoIds = {{ youtube_video_ids_json }};
         let index = 0;
         let musicMuted = true;
         let musicStarted = false;
@@ -296,7 +290,7 @@
         const dateTextEl = document.getElementById('dateText');
         const captionTextEl = document.getElementById('captionText');
         const counterTextEl = document.getElementById('counterText');
-        const musicFrameEl = document.getElementById('musicFrame');
+        const musicPlayerEl = document.getElementById('musicPlayer');
         const muteBtnEl = document.getElementById('muteBtn');
         const welcomeEl = document.getElementById('welcomeScreen');
         const continueBtnEl = document.getElementById('continueBtn');
@@ -304,13 +298,8 @@
         const toplineEl = document.getElementById('toplineBar');
         const viewerEl = document.getElementById('viewerPanel');
 
-        function musicSrc(muted) {
-            const muteValue = muted ? '1' : '0';
-            return 'https://www.youtube-nocookie.com/embed/' + musicVideoId
-                + '?autoplay=1&mute=' + muteValue
-                + '&controls=0&loop=1&playlist=' + musicVideoId
-                + '&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1';
-        }
+        let ytPlayer = null;
+        let musicVideoIndex = 0;
 
         function updateMuteButton() {
             if (!musicStarted) {
@@ -324,20 +313,62 @@
             if (!musicStarted) {
                 musicStarted = true;
                 musicMuted = false;
-                musicFrameEl.src = musicSrc(false);
+                if (ytPlayer && typeof ytPlayer.playVideo === 'function') {
+                    ytPlayer.unMute();
+                    ytPlayer.playVideo();
+                }
                 updateMuteButton();
                 return;
             }
 
+            if (!ytPlayer) return;
+
             if (musicMuted) {
                 musicMuted = false;
-                musicFrameEl.src = musicSrc(false);
+                ytPlayer.unMute();
             } else {
                 musicMuted = true;
-                musicFrameEl.src = musicSrc(true);
+                ytPlayer.mute();
             }
 
             updateMuteButton();
+        }
+
+        function createYTPlayer() {
+            if (!Array.isArray(musicVideoIds) || !musicVideoIds.length) return;
+            if (ytPlayer) return;
+            window.onYouTubeIframeAPIReady = function() {
+                ytPlayer = new YT.Player('musicPlayer', {
+                    videoId: musicVideoIds[musicVideoIndex] || musicVideoIds[0],
+                    playerVars: {
+                        autoplay: 1,
+                        controls: 0,
+                        modestbranding: 1,
+                        rel: 0,
+                        iv_load_policy: 3,
+                        playsinline: 1
+                    },
+                    events: {
+                        onReady: function(e) {
+                            if (musicStarted) {
+                                if (musicMuted) e.target.mute(); else e.target.unMute();
+                                try { e.target.playVideo(); } catch (err) { }
+                            } else {
+                                e.target.mute();
+                            }
+                        },
+                        onStateChange: function(event) {
+                            if (event.data === YT.PlayerState.ENDED) {
+                                musicVideoIndex = (musicVideoIndex + 1) % musicVideoIds.length;
+                                ytPlayer.loadVideoById(musicVideoIds[musicVideoIndex]);
+                            }
+                        }
+                    }
+                });
+            };
+            var tag = document.createElement('script');
+            tag.src = 'https://www.youtube.com/iframe_api';
+            document.head.appendChild(tag);
         }
 
         function applyPhoto(item) {
@@ -428,7 +459,11 @@
 
             musicStarted = true;
             musicMuted = false;
-            musicFrameEl.src = musicSrc(false);
+            createYTPlayer();
+            if (ytPlayer && typeof ytPlayer.playVideo === 'function') {
+                ytPlayer.unMute();
+                ytPlayer.playVideo();
+            }
             updateMuteButton();
 
             render(false);
@@ -468,6 +503,7 @@
             }
         }
 
+        createYTPlayer();
         updateMuteButton();
     </script>
 </body>
