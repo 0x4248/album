@@ -52,16 +52,19 @@ def encode_jpeg(
     exif_bytes: bytes | None,
 ) -> bytes:
     buf = io.BytesIO()
-    img.save(
-        buf,
+    save_kwargs = dict(
         format="JPEG",
         quality=quality,
         optimize=True,
         progressive=True,
         subsampling=subsampling,
-        icc_profile=icc_profile,
-        exif=exif_bytes,
     )
+    if icc_profile is not None:
+        save_kwargs["icc_profile"] = icc_profile
+    if exif_bytes is not None:
+        save_kwargs["exif"] = exif_bytes
+
+    img.save(buf, **save_kwargs)
     return buf.getvalue()
 
 
@@ -72,14 +75,13 @@ def encode_webp(
     exif_bytes: bytes | None,
 ) -> bytes:
     buf = io.BytesIO()
-    img.save(
-        buf,
-        format="WEBP",
-        quality=quality,
-        method=6,
-        icc_profile=icc_profile,
-        exif=exif_bytes,
-    )
+    save_kwargs = dict(format="WEBP", quality=quality, method=6)
+    if icc_profile is not None:
+        save_kwargs["icc_profile"] = icc_profile
+    if exif_bytes is not None:
+        save_kwargs["exif"] = exif_bytes
+
+    img.save(buf, **save_kwargs)
     return buf.getvalue()
 
 
